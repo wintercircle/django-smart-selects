@@ -150,7 +150,7 @@ class ChainedSelect(JqueryMediaMixin, Select):
         else:
             final_attrs['class'] = 'chained-fk'
 
-        output = super(ChainedSelect, self).render(name, value, final_attrs, renderer=None)
+        output = super(ChainedSelect, self).render(name, value, final_attrs, renderer=renderer)
 
         return mark_safe(output)
 
@@ -262,6 +262,6 @@ class ChainedSelectMultiple(JqueryMediaMixin, SelectMultiple):
             # For hozontal mode add django filter horizontal javascript selector class
             final_attrs['class'] += ' selectfilter'
         final_attrs['data-field-name'] = self.verbose_name
-        output = super(ChainedSelectMultiple, self).render(name, value, final_attrs, renderer=None)
+        output = super(ChainedSelectMultiple, self).render(name, value, final_attrs, renderer=renderer)
 
         return mark_safe(output)
